@@ -1,0 +1,5 @@
+SELECT COUNT (student_name) FROM student;
+SELECT book_title FROM book JOIN relating ON book.book_id = relating.book_id JOIN users ON users.staff_id = relating.staff_id WHERE staff_name LIKE "%Arou%";
+SELECT student_name FROM student JOIN relating ON student.student_id = relating.student_id JOIN book ON book.book_id = relating.book_id WHERE book_title LIKE "%when the sun goes down%";
+SELECT book_title FROM book WHERE book_id IN(SELECT book_id FROM relating WHERE student_id IN(SELECT student_id FROM student WHERE student_name LIKE "%Ar%"));
+SELECT * FROM users;
